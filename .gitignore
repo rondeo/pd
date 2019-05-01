@@ -54,3 +54,16 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#jopa
+/e2e 
+angular.json 
+package.json 
+README.md 
+tsconfig.json 
+tslint.json 
+/src/karma.conf.json 
+/src/tsconfig.app.json 
+/src/tsconfig.spec.json 
+/src/tslint.json 
+/src/users.json
