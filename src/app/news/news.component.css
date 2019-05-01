@@ -1,4 +1,4 @@
-.news{
-	width: 10rem;
-	height: 10rem;
-}
+.card-im {
+	width: 60%;
+	border-radius: calc(0.25rem - 1px);
+  }

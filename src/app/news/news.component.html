@@ -1,10 +1,15 @@
 <h2>Новости</h2> 
-<div *ngFor="let object of ArrofObjects" class="media position-relative"> 
-<img src={{object.image_link}} class="mr-3 news" alt="..."> 
-<div class="media-body"> 
-<h5 class="mt-0">{{object.title}}</h5> 
-<div>{{object.description}} <a href="#">Читать далее...</a></div> 
-<p>{{object.publication_date}}</p>
-
-</div> 
-</div>
+	<div *ngFor="let object of ArrofObjects" class="card mb-3">
+		<div class="row no-gutters">
+			<div class="col-md-3">
+				<img src="{{object.image_link}}" class="card-img">
+		  	</div>
+		  	<div class="col-md-9">
+				<div class="card-body">
+				  	<h5 class="card-title">{{object.title}}</h5>
+				  	<div><p class="card-text">{{object.description}} </p><a href="#" class="">Подробнее</a></div>
+			  		<p class="card-text"><small class="text-muted">Добавлено {{object.publication_date}}</small></p>
+				</div>
+			</div>
+		</div>
+	</div>
