@@ -2,11 +2,11 @@
 <p *ngFor="let object of ArrofObjects">Пользователь:{{object.user}}|Заголовок:{{object.title}}|Описание:{{object.description}}</p> -->
 <h2>Новости</h2> 
 <div *ngFor="let object of ArrofObjects" class="media position-relative"> 
-<img src="http://ski-omer.ru/images/data/gallery/0_big_1334305884_1036_resize.jpg" class="mr-3 news" alt="..."> 
+<img src={{object.image_link}} class="mr-3 news" alt="..."> 
 <div class="media-body"> 
 <h5 class="mt-0">{{object.title}}</h5> 
-<p>{{object.description}}</p> 
+<div>{{object.description}} <a href="#">Читать далее...</a></div> 
 <p>{{object.publication_date}}</p>
-<a href="#" class="stretched-link">Go somewhere</a> 
-</div> 
+<!-- <a href="#" class="stretched-link">Go somewhere</a>  -->
+</div>
 </div> 
