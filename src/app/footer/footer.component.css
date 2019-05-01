@@ -1,0 +1,20 @@
+a.social-vk {
+    background: url('src/assets/img/icons/vk.png');
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+a.social-vk:hover {
+    background: url('src/assets/img/icons/vk-hover.png'); 
+}
+a.social-inst {
+    background: url('src/assets/img/icons/inst.png');
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    
+}
+a.social-inst:hover {
+    background: url('src/assets/img/icons/inst-hover.png');
+}

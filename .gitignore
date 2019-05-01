@@ -56,8 +56,4 @@ tslint.json
 /src/tsconfig.app.json 
 /src/tsconfig.spec.json 
 /src/tslint.json 
-<<<<<<< HEAD
 /src/users.json
-=======
-/src/users.json
->>>>>>> 31656b95e9177a417ab274c44dea6f01467e1f0a
