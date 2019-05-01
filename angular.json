@@ -3,7 +3,8 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "skiomer": {
+    "GGPD": {
+
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +14,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/skiomer",
+            "outputPath": "dist/GGPD",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "skiomer:build"
+            "browserTarget": "GGPD:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "skiomer:build:production"
+              "browserTarget": "GGPD:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "skiomer:build"
+            "browserTarget": "GGPD:build"
           }
         },
         "test": {
@@ -107,7 +108,7 @@
         }
       }
     },
-    "skiomer-e2e": {
+    "GGPD-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "skiomer:serve"
+            "devServerTarget": "GGPD:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "skiomer:serve:production"
+              "devServerTarget": "GGPD:serve:production"
             }
           }
         },
@@ -136,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "skiomer"
+  "defaultProject": "GGPD"
 }

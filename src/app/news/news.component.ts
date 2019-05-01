@@ -24,6 +24,10 @@ export class NewsComponent implements OnInit {
        for(let i=0;i<count;i++){
           this.ArrofObjects[i]=dat[i];
        }
+       for(let i=0;i<count;i++){
+        this.ArrofObjects[i].description=this.ArrofObjects[i].description.substring(0,200);
+       }
+
         
         console.log(this.ArrofObjects);
       });

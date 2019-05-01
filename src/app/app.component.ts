@@ -10,7 +10,7 @@ import{HttpService} from 'src/app/http.services';
 })
 export class AppComponent implements OnInit {
   constructor(private http: HttpClient,private hp:HttpService){}
-  title = 'Skiomer';
+  title = 'GGPD';
   ArrofObjects=[];
   object={user:"",title:"",description:"",vc:"",enabled:"",date:""};
 
