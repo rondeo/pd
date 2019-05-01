@@ -16,7 +16,6 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(){
           
-     //this.http.get('http://server.std-763.ist.mospolytech.ru/getNews.php',{responseType:'text'}).subscribe(data=>console.log(data));
      this.hp.getData("all").subscribe((dat)=>{
        let count=dat.toString().split(",").length;
        for(let i=0;i<count;i++){
