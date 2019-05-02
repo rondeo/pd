@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import{HttpService} from 'src/app/http.services';
-import { Guest } from '../guest';
-import { watch } from 'fs';
 
 @Component({
   selector: 'app-guest-book',
