@@ -1,19 +1,24 @@
-<div *ngFor="let object of ArrofObjects">
-<ul *ngIf="object!=undefined" class="list-group">
-    <li class="list-group-item">{{object.nikname}}</li>
-    <li class="list-group-item">{{object.comment}}</li>
-  </ul>
-</div>
+<div class="p-3">
+  <div class="card mb-3" style="width: 100%" *ngFor="let object of ArrofObjects">
+    <div *ngIf="object!=undefined">
+      <div class="card-header">{{object.nikname}}</div>
+      <div class="card-body">
+          <p class="mb-0">{{object.comment}}</p>
+      </div>
+      <div class="card-footer text-muted">Добавлено: {{object.publication_date}}</div>
+    </div>
+  </div>
 
-<br>
-<form>
-    <div class="form-group">
-      <label for="formGroupExampleInput">Ваше имя</label>
-      <input [(ngModel)]="from" name="from" type="text" class="form-control" id="formGroupExampleInput" >
-    </div>
-    <div class="form-group">
-      <label for="formGroupExampleInput2">Ваше сообщение</label>
-      <textarea [(ngModel)]="message" name="message"type="text" name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
-    </div>
+  <h4>Отправь нам сообщение!</h4>
+  <form class="">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Ваше имя:</label>
+        <input [(ngModel)]="from" name="from" type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите ваше имя">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Ваше сообщение:</label>
+        <textarea [(ngModel)]="message" name="message"type="text" name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Введите ваше сообщение"></textarea>
+      </div>
   </form>
-<button class="btn btn-primary" (click)="publish()">Отправить</button>
+  <button class="btn btn-secondary" (click)="publish()">Отправить</button>
+</div>
