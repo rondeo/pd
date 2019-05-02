@@ -7,20 +7,41 @@
   </button>
   <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
     <ul class="navbar-nav nav nav-pills nav-fill">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">ГЛАВНАЯ<span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          [routerLink]="'/'"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >ГЛАВНАЯ</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">КОНТАКТЫ</a>
+        <a 
+          class="nav-link" 
+          [routerLink]="'/contacts'"
+          routerLinkActive="active"
+          >КОНТАКТЫ</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ГОСТЕВАЯ КНИГА</a>
+        <a 
+          class="nav-link" 
+          [routerLink]="'/guestbook'"
+          routerLinkActive="active"
+          >ГОСТЕВАЯ КНИГА</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">РОО "КЛУБ ВЕТЕРАНОВ МКФ"</a>
+        <a 
+          class="nav-link" 
+          [routerLink]="'/club'"
+          routerLinkActive="active"
+          >РОО "КЛУБ ВЕТЕРАНОВ МКФ"</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ФОТОГАЛЕРЕЯ</a>
+        <a
+          class="nav-link" 
+          [routerLink]="'/gallery'"
+          routerLinkActive="active"
+          >ФОТОГАЛЛЕРЕЯ</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">МЕНЮ</a>

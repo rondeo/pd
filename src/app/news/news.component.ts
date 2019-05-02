@@ -25,11 +25,11 @@ export class NewsComponent implements OnInit {
           this.ArrofObjects[i]=dat[i];
        }
        for(let i=0;i<count;i++){
-        this.ArrofObjects[i].description=this.ArrofObjects[i].description.substring(0,600);
+        this.ArrofObjects[i].description=this.ArrofObjects[i].description.substring(0,400);
        }
 
         
-        console.log(this.ArrofObjects);
+        //console.log(this.ArrofObjects);
       });
     }
 }
