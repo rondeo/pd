@@ -19,4 +19,8 @@ export class HttpService{
     getGuests(param:string){
         return this.http.get('http://server.std-763.ist.mospolytech.ru/getGuests.php?user='+param);
     }
+
+    getShips(){
+        return this.http.get('http://server.std-763.ist.mospolytech.ru/getShips.php?user=all');
+    }
 }

@@ -15,12 +15,16 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ClubComponent } from './club/club.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FormsModule }   from '@angular/forms';
+import { BoatsComponent } from './boats/boats.component';
+import { FullNewsComponent } from './full-news/full-news.component';
 
 // определение маршрутов
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
+  { path: 'full_news/:id', component: FullNewsComponent},
   { path: 'news', component: NewsComponent},
   { path: 'guestbook', component: GuestBookComponent},
+  { path: 'boats',component:BoatsComponent},
   { path: 'club', component: ClubComponent},
   { path: 'contacts', component: ContactsComponent},
   { path: 'gallery', component: GalleryComponent},
@@ -38,7 +42,9 @@ const appRoutes: Routes =[
     NotFoundComponent,
     ContactsComponent,
     ClubComponent,
-    GalleryComponent
+    GalleryComponent,
+    BoatsComponent,
+    FullNewsComponent
   ],
   imports: [
     BrowserModule,
