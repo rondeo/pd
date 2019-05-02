@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import{HttpService} from 'src/app/http.services';
+import { Guest } from '../guest';
+import { watch } from 'fs';
 
 @Component({
   selector: 'app-guest-book',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuestBookComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private hp:HttpService) { }
+  from="";
+  message="";
+  ArrofObjects=[];
+  object={nickname:"",comment:"",publication_date:"",enabled:""};
   ngOnInit() {
+    
+    this.hp.getGuests("all").subscribe((data)=>{
+      let count=data.toString().split(",").length;
+      if(count>0){
+       for(let i=0;i<count;i++){
+          this.ArrofObjects.push({});
+       }
+       for(let i=0;i<count;i++){
+          this.ArrofObjects[i]=data[i];
+       }
+      }
+    });
+  }
+
+  publish(){
+    this.hp.postData({message:this.message,from:this.from}).subscribe(data=>console.log(data));
+    
   }
 
 }

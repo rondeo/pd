@@ -1,1 +1,19 @@
-<h1>хуй соси</h1>
+<div *ngFor="let object of ArrofObjects">
+<ul *ngIf="object!=undefined" class="list-group">
+    <li class="list-group-item">{{object.nikname}}</li>
+    <li class="list-group-item">{{object.comment}}</li>
+  </ul>
+</div>
+
+<br>
+<form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Ваше имя</label>
+      <input [(ngModel)]="from" name="from" type="text" class="form-control" id="formGroupExampleInput" >
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Ваше сообщение</label>
+      <textarea [(ngModel)]="message" name="message"type="text" name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
+    </div>
+  </form>
+<button class="btn btn-primary" (click)="publish()">Отправить</button>

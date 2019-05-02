@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ClubComponent } from './club/club.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { FormsModule }   from '@angular/forms';
 
 // определение маршрутов
 const appRoutes: Routes =[
@@ -42,7 +43,8 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
