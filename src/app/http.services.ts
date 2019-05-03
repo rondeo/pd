@@ -23,4 +23,7 @@ export class HttpService{
     getShips(){
         return this.http.get('http://server.std-763.ist.mospolytech.ru/getShips.php?user=all');
     }
+    getProfiles(param:string){
+        return this.http.get('http://server.std-763.ist.mospolytech.ru/getProfiles.php?user='+param);
+    }
 }
