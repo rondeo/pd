@@ -1,5 +1,8 @@
-<h1>{{news.title}}</h1>
-<img src="{{news.image_link}}" class="card-img">
-<p>
-  {{news.description}}
-</p>
+<div class="card border-dark m-3" style="">
+  <img src="{{news.image_link}}" class="card-img" style="width: 50%;">
+  <div class="card-body text-dark">
+    <h4 class="card-title">{{news.title}}</h4>
+    <p class="card-text">{{news.description}}</p>
+  </div>
+  <div class="card-header">Добавлено {{news.publication_date}}</div>
+</div>
