@@ -1,10 +1,27 @@
 .main-nav {
 	width: 100%;
-	height: auto;
+	height: 20vh;
 	background-image: url(/assets/img/static/ocean.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top;
+}
+.main-img{
+	/* Размер лого 1920х400 */
+	height: 20vh;
+	width: auto;
+	z-index: 1050;
+	position: relative;
+	background-size: cover;
+}
+.back-img{
+	position: absolute;
+	top: 5.5vh;
+	right: 0;
+	left: 0;
+	height: 10vh;
+	width: 100vw;
+	background-size: cover;
 }
 .nav-link.active {
 	background-color: #f2f2f2;
