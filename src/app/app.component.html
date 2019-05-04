@@ -1,6 +1,4 @@
-<app-navbar></app-navbar>
-<div>
-  <ngx-spinner
+<ngx-spinner
   bdOpacity = 0.9
   bdColor = "#09082b"
   size = "large"
@@ -9,7 +7,9 @@
   [fullScreen] = "true"
   >
   <p style="color: white" > Загрузка </p>
-  </ngx-spinner>
+</ngx-spinner>
+<app-navbar></app-navbar>
+<div>
   <router-outlet></router-outlet>
   <app-footer></app-footer>
 </div>
