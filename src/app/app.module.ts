@@ -19,11 +19,13 @@ import { FormsModule }   from '@angular/forms';
 import { BoatsComponent } from './boats/boats.component';
 import { FullNewsComponent } from './full-news/full-news.component';
 import { PeoplesComponent } from './peoples/peoples.component';
+import { FullAlbumComponent } from './full-album/full-album.component';
 
 // определение маршрутов
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
   { path: 'full_news/:id', component: FullNewsComponent},
+  { path: 'full_album/:id', component: FullAlbumComponent},
   { path: 'peoples', component: PeoplesComponent},
   { path: 'news', component: NewsComponent},
   { path: 'guestbook', component: GuestBookComponent},
@@ -48,7 +50,8 @@ const appRoutes: Routes =[
     GalleryComponent,
     BoatsComponent,
     FullNewsComponent,
-    PeoplesComponent
+    PeoplesComponent,
+    FullAlbumComponent
   ],
   imports: [
     BrowserModule,

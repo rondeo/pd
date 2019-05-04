@@ -22,4 +22,7 @@ export class FullNewsComponent implements OnInit {
     })
   }
 
+
+  
+
 }
