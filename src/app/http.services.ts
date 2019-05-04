@@ -26,4 +26,7 @@ export class HttpService{
     getProfiles(param:string){
         return this.http.get('http://server.std-763.ist.mospolytech.ru/getProfiles.php?user='+param);
     }
+    getGalery(param:string){
+        return this.http.get('http://server.std-763.ist.mospolytech.ru/getGallery.php?user='+param);
+    }
 }

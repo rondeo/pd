@@ -3,10 +3,10 @@
     <hr class="mt-2 mb-5">  
     <div class="row text-center text-lg-left">
 
-      <div class="col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-          <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
-          <p class="text-center">Any title</p>
+      <div *ngFor="let object of ArrofObjects" class="col-lg-3 col-md-4 col-6">
+        <a [routerLink]="['/full_album', object.id]" routerLinkActive="active" class="d-block mb-4 h-100">
+          <img class="img-fluid img-thumbnail" src="{{object.link}}" alt="">
+          <p class="text-center">{{object.album}}</p>
         </a>
       </div>
 
