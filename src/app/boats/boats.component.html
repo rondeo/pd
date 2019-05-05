@@ -1,12 +1,24 @@
-<div class='p-3 boats'>
-  <h1>Суда</h1>
-  <div *ngFor="let object of ArrofObjects">
-    <ul class="list-group">
-      <li class="list-group-item">{{object.name}}</li>
-    </ul>
+<div>
+
+  <div class="row" style="margin: 0; min-height: calc(100vh - 56px);">
+    <div class="col-md-3 bg-secondary pt-3">
+
+      <div *ngFor="let object of ArrofObjects" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+        <a class="nav-link" id="{{object.name}}-tab" data-toggle="pill" href="#{{object.name}}" role="tab" [attr.aria-controls]="object.name" aria-selected="true">{{object.name}}</a>
+
+      </div>
+    </div>
+    <div class="col-md-9 bg-light p-3">
+      <div *ngFor="let object of ArrofObjects" class="tab-content" id="v-pills-tabContent">
+
+        <div class="tab-pane fade show active" id="{{object.name}}" role="tabpanel" attr.aria-labelledby="{{object.name}}-tab">
+          <h3>{{object.name}}</h3>
+          <p>{{object.description}}</p>
+        </div>
+
+      </div>
+    </div>
   </div>
+
 </div>
-
-
-
-
