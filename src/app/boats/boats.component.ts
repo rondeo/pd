@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{HttpService} from 'src/app/http.services';
+import { HttpService } from 'src/app/http.services';
 
 @Component({
   selector: 'app-boats',
@@ -10,6 +10,7 @@ export class BoatsComponent implements OnInit {
   ArrofObjects=[];
   object={name:"",create_at:"",start_using_date:"",end_using_date:"",description:"",specification:""};
   constructor(private hp:HttpService) { }
+
 
   ngOnInit() {
     // this.hp.getShips().subscribe(data=>console.log(data));
