@@ -28,7 +28,7 @@ const appRoutes: Routes =[
   { path: '', component: HomeComponent},
   { path: 'full_news/:id', component: FullNewsComponent},
   { path: 'full_album/:id', component: FullAlbumComponent},
-  { path: 'boats/:id', component: BoatsComponent},
+  { path: 'boats_desc/:id', component: BoatsDescComponent},
   { path: 'peoples', component: PeoplesComponent},
   { path: 'news', component: NewsComponent},
   { path: 'guestbook', component: GuestBookComponent},

@@ -20,8 +20,8 @@ export class HttpService{
         return this.http.get('http://server.std-763.ist.mospolytech.ru/getGuests.php?user='+param);
     }
 
-    getShips(){
-        return this.http.get('http://server.std-763.ist.mospolytech.ru/getShips.php?user=all');
+    getShips(param:string){
+        return this.http.get('http://server.std-763.ist.mospolytech.ru/getShips.php?user='+param);
     }
     getProfiles(param:string){
         return this.http.get('http://server.std-763.ist.mospolytech.ru/getProfiles.php?user='+param);

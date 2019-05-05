@@ -1,12 +1,2 @@
-<a 
-*ngFor="let object of ArrofObjects"
-class="nav-link" 
-id="{{object.name}}-tab" 
-data-toggle="pill" 
-href="#{{object.name}}" 
-role="tab" 
-[attr.aria-controls]="object.name" 
-aria-selected="true"
-[routerLink]="['/boats', object.title]" 
-routerLinkActive="active"
->{{object.name}}</a>
+<a class="nav-link" role="tab" *ngFor="let object of ArrofObjects" [routerLink]="['/boats_desc', object.id]" 
+   routerLinkActive="active">{{object.name}}</a>
