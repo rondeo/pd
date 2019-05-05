@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{HttpService} from 'src/app/http.services';
+import { HttpService } from 'src/app/http.services';
 
 @Component({
   selector: 'app-boats',

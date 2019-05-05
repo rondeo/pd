@@ -20,12 +20,15 @@ import { BoatsComponent } from './boats/boats.component';
 import { FullNewsComponent } from './full-news/full-news.component';
 import { PeoplesComponent } from './peoples/peoples.component';
 import { FullAlbumComponent } from './full-album/full-album.component';
+import { BoatsTitleComponent } from './boats-title/boats-title.component';
+import { BoatsDescComponent } from './boats-desc/boats-desc.component';
 
 // определение маршрутов
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
   { path: 'full_news/:id', component: FullNewsComponent},
   { path: 'full_album/:id', component: FullAlbumComponent},
+  { path: 'boats/:id', component: BoatsComponent},
   { path: 'peoples', component: PeoplesComponent},
   { path: 'news', component: NewsComponent},
   { path: 'guestbook', component: GuestBookComponent},
@@ -51,7 +54,9 @@ const appRoutes: Routes =[
     BoatsComponent,
     FullNewsComponent,
     PeoplesComponent,
-    FullAlbumComponent
+    FullAlbumComponent,
+    BoatsTitleComponent,
+    BoatsDescComponent
   ],
   imports: [
     BrowserModule,
