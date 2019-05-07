@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import{HttpService} from 'src/app/http.services';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news',
@@ -9,11 +10,10 @@ import{HttpService} from 'src/app/http.services';
 })
 export class NewsComponent implements OnInit {
 
-  constructor(private http: HttpClient,private hp:HttpService){}
+  constructor(private http: HttpClient,private hp:HttpService,private sanitizer: DomSanitizer){}
   title = 'GGPD';
   ArrofObjects=[];
   object={user:"",title:"",description:"",vc:"",enabled:"",date:""};
-
   ngOnInit(){
           
      this.hp.getData("all").subscribe((dat)=>{
@@ -25,11 +25,8 @@ export class NewsComponent implements OnInit {
           this.ArrofObjects[i]=dat[i];
        }
        for(let i=0;i<count;i++){
-        this.ArrofObjects[i].description=this.ArrofObjects[i].description.substring(0,400);
+        this.ArrofObjects[i].description=this.sanitizer.bypassSecurityTrustHtml(this.ArrofObjects[i].description.substring(0,400));
        }
-
-        
-        //console.log(this.ArrofObjects);
       });
     }
 }
