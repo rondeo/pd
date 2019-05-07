@@ -9,23 +9,29 @@ export class GalleryComponent implements OnInit {
 
   constructor(private hp:HttpService) { }
 
-  ArrofObjects=[];
+  ArrofObjects;
   object={id:"",album:"",link:""};
 
   ngOnInit() {
-    this.hp.getGalery("all").subscribe((dat)=>{
-      let count=dat.toString().split(",").length;
-      for(let i=0;i<count;i++){
-         this.ArrofObjects.push({});
-      }
-      for(let i=0;i<count;i++){
-         this.ArrofObjects[i]=dat[i];
-      }
+    // this.hp.getGalery("all").subscribe((dat)=>{
+    //   let count=dat.toString().split(",").length;
+    //   for(let i=0;i<count;i++){
+    //      this.ArrofObjects.push({});
+    //   }
+    //   for(let i=0;i<count;i++){
+    //      this.ArrofObjects[i]=dat[i];
+    //   }
       
 
        
-       console.log(this.ArrofObjects);
-     });
+    //    console.log(this.ArrofObjects);
+    //  });
+    this.getGallery();
+    
+  }
+
+  async getGallery(){
+    this.ArrofObjects= await this.hp.getGalery("all");
   }
 
 }

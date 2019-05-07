@@ -12,19 +12,25 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class FullNewsComponent implements OnInit {
   private id: string;
   private subscription: Subscription;
-  news={user:"",title:"",description:"",vc:"",enabled:"",date:""};
+  //news={user:"",title:"",description:"",vc:"",enabled:"",date:""};
+  news;
   htmlData:any;
   constructor(private activateRoute: ActivatedRoute,private hp:HttpService,private sanitizer: DomSanitizer) { 
     this.subscription = activateRoute.params.subscribe(params=>this.id=params['id']);
   }
 
   ngOnInit() {
-    this.hp.getData(this.id).subscribe((data)=>{
-      this.news=data[0];
-      this.htmlData= this.sanitizer.bypassSecurityTrustHtml(this.news.description);
-    })
+    // this.hp.getData(this.id).subscribe((data)=>{
+    //   this.news=data[0];
+    //   this.htmlData= this.sanitizer.bypassSecurityTrustHtml(this.news.description);
+    // })
+    this.getNews();
 
+  }
 
+  async getNews(){
+    this.news=await this.hp.getData(this.id);
+    this.htmlData= this.sanitizer.bypassSecurityTrustHtml(this.news.description);
   }
 
 
