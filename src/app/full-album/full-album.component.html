@@ -1,14 +1,15 @@
 <div class="container">
-  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">{{Album}}</h1>  
-  <hr class="mt-2 mb-5">  
+  <div class="row align-items-end justify-content-between">
+    <h1 class="font-weight-light text-center text-lg-left mt-2 mb-0">{{Album}}</h1>
+    <a [routerLink]="['/gallery']" routerLinkActive="active" class="btn btn-danger">Вернуться назад</a>
+  </div> 
+  <hr class="mt-2 mb-3">  
   <div class="row text-center text-lg-left">
-
     <div *ngFor="let object of ArrofObjects" class="col-lg-3 col-md-4 col-6">
       <a class="d-block mb-4 h-100">
         <img class="img-fluid img-thumbnail" src="{{object.link}}" alt="">
         <p class="text-center">{{object.photo_name}}</p>
       </a>
     </div>
-
   </div>  
 </div>
