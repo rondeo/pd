@@ -7,7 +7,7 @@
 		  	<div class="col-md-9">
 				<div class="card-body">
 				  	<h5 class="card-title">{{object.title}}</h5>
-				  	<div><p class="card-text">{{object.description}} </p><a  class="" [routerLink]="['/full_news', object.title]" routerLinkActive="active">Подробнее</a></div>
+				  	<div><div class="card-text" [innerHTML]="object.description"></div><a  class="" [routerLink]="['/full_news', object.title]" routerLinkActive="active">Подробнее</a></div>
 			  		<p class="card-text"><small class="text-muted">Добавлено {{object.publication_date}}</small></p>
 				</div>
 			</div>
