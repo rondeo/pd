@@ -12,33 +12,42 @@ export class GuestBookComponent implements OnInit {
   constructor(private hp:HttpService,private router: Router) { }
   from="";
   message="";
-  ArrofObjects=[];
+  ArrofObjects;
   object={nickname:"",comment:"",publication_date:"",enabled:""};
   ngOnInit() {
     this.getGuestBook();
   }
 
   publish(){
-    this.hp.postData({message:this.message,from:this.from}).subscribe(data=>console.log(data));
-    this.getGuestBook();
-    this.router.navigateByUrl('/RefrshComponent', {skipLocationChange: true}).then(()=>
-    this.router.navigate(["/guestbook"]));    
+    // this.hp.postData({message:this.message,from:this.from}).subscribe(data=>{
+    //   console.log(data)
+    //   this.getGuestBook();
+    // });
+
+    this.hp.postData({message:this.message,from:this.from}).then(()=>
+    this.getGuestBook());
+    //this.getGuestBook();
+    
+    // this.router.navigateByUrl('/RefrshComponent', {skipLocationChange: true}).then(()=>
+    // this.router.navigate(["/guestbook"]));    
   }
   
 
-  getGuestBook(){
+  async getGuestBook(){
     this.ArrofObjects=[];
-    this.hp.getGuests("all").subscribe((data)=>{
-      let count=data.toString().split(",").length;
-      if(count>0){
-       for(let i=0;i<count;i++){
-          this.ArrofObjects.push({});
-       }
-       for(let i=0;i<count;i++){
-          this.ArrofObjects[i]=data[i];
-       }
-      }
-    });
+    this.ArrofObjects= await this.hp.getGuests("all");
+    
+    // .subscribe((data)=>{
+    //   let count=data.toString().split(",").length;
+    //   if(count>0){
+    //    for(let i=0;i<count;i++){
+    //       this.ArrofObjects.push({});
+    //    }
+    //    for(let i=0;i<count;i++){
+    //       this.ArrofObjects[i]=data[i];
+    //    }
+    //   }
+    // });
   }
 
 }

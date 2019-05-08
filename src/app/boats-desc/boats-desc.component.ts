@@ -14,30 +14,30 @@ export class BoatsDescComponent implements OnInit {
   private id: string;
   private last_id: string;
   private subscription: Subscription;
-  boat={description:"suka"};
+  boat;
 
   constructor(private activateRoute: ActivatedRoute,private hp:HttpService) { 
     this.subscription = activateRoute.params.subscribe(params=>{
       this.id=params['id'];
+      console.log(this.id);
       this.newView();
     });
   }
 
   ngOnInit() {
-    this.hp.getShips(this.id).subscribe((data)=>{
-      this.boat=data[0];
-      console.log(this.boat);
-    });
-     
-
+  
   }
   
   
 
 
-  newView(){
-    this.hp.getShips(this.id).subscribe((data)=>{
-      this.boat=data[0];
-      });
+  async newView(){
+    // this.hp.getShips(this.id).subscribe((data)=>{
+    //   this.boat=data[0];
+    //   });
+    this.boat= await this.hp.getShips(this.id);
+    this.boat=this.boat[0].description;
+   // console.log(this.boat);
+
   }
 }

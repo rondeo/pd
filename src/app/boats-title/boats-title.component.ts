@@ -9,7 +9,7 @@ import { ActivatedRoute} from '@angular/router';
   styleUrls: ['./boats-title.component.css']
 })
 export class BoatsTitleComponent implements OnInit {
-  ArrofObjects=[];
+  ArrofObjects;
   private id: string;
   private subscription: Subscription;
   constructor(private hp:HttpService) { 
@@ -17,17 +17,21 @@ export class BoatsTitleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hp.getShips("all").subscribe((data)=>{
-      let count=data.toString().split(",").length;
-       for(let i=0;i<count;i++){
-          this.ArrofObjects.push({});
-       }
-       for(let i=0;i<count;i++){
-          this.ArrofObjects[i]=data[i];
-       }
+    // this.hp.getShips("all").subscribe((data)=>{
+    //   let count=data.toString().split(",").length;
+    //    for(let i=0;i<count;i++){
+    //       this.ArrofObjects.push({});
+    //    }
+    //    for(let i=0;i<count;i++){
+    //       this.ArrofObjects[i]=data[i];
+    //    }
        
-      });
-    
+    //   });
+    this.getShips();
+  }
+
+  async getShips(){
+    this.ArrofObjects=await this.hp.getShips("all");
   }
   
   }
