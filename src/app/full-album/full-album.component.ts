@@ -13,7 +13,7 @@ export class FullAlbumComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute,private hp:HttpService) { 
     this.subscription = activateRoute.params.subscribe(params=>this.id=params['id']);
   }
-  ArrofObjects=[];
+  ArrofObjects;
   Album="";
   album={album_id:"",album_name:"",link:""};
   ngOnInit() {
@@ -22,17 +22,22 @@ export class FullAlbumComponent implements OnInit {
     //   this.album=data[0];
     //   console.log(this.album);
     // })
+    
+    // this.hp.getGalery(this.id).subscribe((dat)=>{
+    //   let count=dat.toString().split(",").length;
+    //   for(let i=0;i<count;i++){
+    //      this.ArrofObjects.push({});
+    //   }
+    //   for(let i=0;i<count;i++){
+    //      this.ArrofObjects[i]=dat[i];
+    //   }
+    //   this.Album=this.ArrofObjects[0].album_name;
+    // }); 
+    this.getAlbum();
+  }
 
-    this.hp.getGalery(this.id).subscribe((dat)=>{
-      let count=dat.toString().split(",").length;
-      for(let i=0;i<count;i++){
-         this.ArrofObjects.push({});
-      }
-      for(let i=0;i<count;i++){
-         this.ArrofObjects[i]=dat[i];
-      }
-      this.Album=this.ArrofObjects[0].album_name;
-    }); 
+  async getAlbum(){
+    this.ArrofObjects=await this.hp.getGalery(this.id);
   }
 }
 

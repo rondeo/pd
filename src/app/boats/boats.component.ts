@@ -15,17 +15,17 @@ export class BoatsComponent implements OnInit {
   ngOnInit() {
     // this.hp.getShips().subscribe(data=>console.log(data));
     // this.ArrofObjects=[];
-    this.hp.getShips("all").subscribe((data)=>{
-      let count=data.toString().split(",").length;
-      if(count>0){
-       for(let i=0;i<count;i++){
-          this.ArrofObjects.push({});
-       }
-       for(let i=0;i<count;i++){
-          this.ArrofObjects[i]=data[i];
-       }
-      }
-    });
+    // this.hp.getShips("all").subscribe((data)=>{
+    //   let count=data.toString().split(",").length;
+    //   if(count>0){
+    //    for(let i=0;i<count;i++){
+    //       this.ArrofObjects.push({});
+    //    }
+    //    for(let i=0;i<count;i++){
+    //       this.ArrofObjects[i]=data[i];
+    //    }
+    //   }
+    // });
     
   }
 
