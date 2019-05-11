@@ -22,7 +22,8 @@ import { PeoplesComponent } from './peoples/peoples.component';
 import { FullAlbumComponent } from './full-album/full-album.component';
 import { BoatsTitleComponent } from './boats-title/boats-title.component';
 import { BoatsDescComponent } from './boats-desc/boats-desc.component';
-
+import { ScrollingDirective } from './scrolling.directive';
+import { ModalModule } from 'ngx-bootstrap/modal';
 // определение маршрутов
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
@@ -56,14 +57,16 @@ const appRoutes: Routes =[
     PeoplesComponent,
     FullAlbumComponent,
     BoatsTitleComponent,
-    BoatsDescComponent
+    BoatsDescComponent,
+    ScrollingDirective
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import{HttpService} from 'src/app/http.services';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -14,27 +14,32 @@ export class NewsComponent implements OnInit {
   title = 'GGPD';
   ArrofObjects;
   object={user:"",title:"",description:"",vc:"",enabled:"",date:""};
+  howMuchNews=20;
+  one=0;
+  scrollingOften=1000;
   ngOnInit(){
-          
-    //  this.hp.getData("all").subscribe((dat)=>{
-    //    let count=dat.toString().split(",").length;
-    //    for(let i=0;i<count;i++){
-    //       this.ArrofObjects.push({});
-    //    }
-    //    for(let i=0;i<count;i++){
-    //       this.ArrofObjects[i]=dat[i];
-    //    }
-    //    for(let i=0;i<count;i++){
-    //     this.ArrofObjects[i].description=this.sanitizer.bypassSecurityTrustHtml(this.ArrofObjects[i].description.substring(0,400));
-    //    }
-    //   });
-    this.getNews();
+    this.getNews(this.howMuchNews);
     }
 
-    async getNews(){
-      this.ArrofObjects=await this.hp.getData("all");
+    async getNews(param:number){
+      this.ArrofObjects=await this.hp.getData("allp&max="+param);
       for (const obj of this.ArrofObjects) {
         obj.description=this.sanitizer.bypassSecurityTrustHtml(obj.description.substring(0,400));
+      }
+    }
+
+    onScroll(){
+      console.log("scrollingg!!");
+    }
+
+    @HostListener('window:scroll', ['$event']) 
+    scrollHandler(event) {
+    
+      let two=window.pageYOffset;
+      if((document.documentElement.scrollHeight-two)<800){
+        this.howMuchNews+=20;
+        this.getNews(this.howMuchNews);
+        this.one+=this.scrollingOften;
       }
     }
 }

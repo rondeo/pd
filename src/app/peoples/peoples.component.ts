@@ -8,19 +8,21 @@ import{HttpService} from 'src/app/http.services';
 export class PeoplesComponent implements OnInit {
 
   constructor(private hp:HttpService) { }
-  ArrofObjects=[];
+  ArrofObjects;
   profile={id:"",first_name:"",last_name:"",last_name_eng:"",patronymic:"",birthday:"",grade:"",profession:"",voyage:"",start_of_work:"",end_of_work:""};
   ngOnInit() {
-    this.hp.getProfiles("all").subscribe((dat)=>{
+    // this.hp.getProfiles("all").subscribe((dat)=>{
       
-      let count=dat.toString().split(",").length;
-      for(let i=0;i<count;i++){
-         this.ArrofObjects.push({});
-      }
-      for(let i=0;i<count;i++){
-         this.ArrofObjects[i]=dat[i];
-      }
-      for(let i=0;i<count;i++){
+    //   let count=dat.toString().split(",").length;
+    //   for(let i=0;i<count;i++){
+    //      this.ArrofObjects.push({});
+    //   }
+    //   for(let i=0;i<count;i++){
+    //      this.ArrofObjects[i]=dat[i];
+    //   }
+    this.getPeoples();
+
+      for(let i=0;i<this.ArrofObjects.length;i++){
         switch(this.ArrofObjects[i].voyage){
           case "1":
             this.ArrofObjects[i].voyage="Майор";
@@ -35,12 +37,19 @@ export class PeoplesComponent implements OnInit {
             this.ArrofObjects[i].voyage="Генерал";
             break;
         }
-     }
+     
       
       console.log(this.ArrofObjects);
+      
+    
        
        
-     });
+    //  });
+      }
+  }
+
+  async getPeoples(){
+    this.ArrofObjects=await this.hp.getProfiles("all");
   }
 
 }
