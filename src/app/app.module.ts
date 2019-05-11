@@ -22,6 +22,7 @@ import { PeoplesComponent } from './peoples/peoples.component';
 import { FullAlbumComponent } from './full-album/full-album.component';
 import { BoatsTitleComponent } from './boats-title/boats-title.component';
 import { BoatsDescComponent } from './boats-desc/boats-desc.component';
+import { ScrollingDirective } from './scrolling.directive';
 
 // определение маршрутов
 const appRoutes: Routes =[
@@ -56,7 +57,8 @@ const appRoutes: Routes =[
     PeoplesComponent,
     FullAlbumComponent,
     BoatsTitleComponent,
-    BoatsDescComponent
+    BoatsDescComponent,
+    ScrollingDirective
   ],
   imports: [
     BrowserModule,

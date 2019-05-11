@@ -1,4 +1,5 @@
 <h2 class="display-4 ml-3">Новости</h2> 
+<div (scroll)="scrollHandler($event)">
 	<div *ngFor="let object of ArrofObjects" class="card mb-3">
 		<div class="row no-gutters">
 			<div class="col-md-3">
@@ -13,3 +14,4 @@
 			</div>
 		</div>
 	</div>
+</div>
