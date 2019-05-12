@@ -16,21 +16,23 @@ export class FullNewsComponent implements OnInit {
   news;
   htmlData:any;
   constructor(private activateRoute: ActivatedRoute,private hp:HttpService,private sanitizer: DomSanitizer) { 
-    this.subscription = activateRoute.params.subscribe(params=>this.id=params['id']);
+    this.subscription = activateRoute.params.subscribe(params=>{
+      this.id=params['id'];
+      this.getNews();
+
+    });
   }
 
   ngOnInit() {
-    // this.hp.getData(this.id).subscribe((data)=>{
-    //   this.news=data[0];
-    //   this.htmlData= this.sanitizer.bypassSecurityTrustHtml(this.news.description);
-    // })
-    this.getNews();
-
+    
   }
 
   async getNews(){
     this.news=await this.hp.getData(this.id);
-    this.htmlData= this.sanitizer.bypassSecurityTrustHtml(this.news.description);
+   
+    console.log(this.news);
+   
+    this.htmlData= this.sanitizer.bypassSecurityTrustHtml(this.news[0].description);
   }
 
 

@@ -16,14 +16,25 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h4 id="dialog-sizes-name1" class="modal-title pull-left">{{object.photo_name}}</h4>
+                  <h4 id="dialog-sizes-name1" class="modal-title pull-left">{{Album}}</h4>
                   <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                    <div class="text-center">
-                      <img class="img-fluid" src="{{object.link}}" alt="">
+                    <div  class="text-center">
+                      <!-- <img class="img-fluid" src="{{object.link}}" alt=""> -->
+                      <!--карусель начало -->
+                      <carousel [noWrap]="noWrapSlides">
+                          <slide *ngFor="let obj1 of ArrofObjects">
+                            <img src="{{obj1.link}}" alt="first slide" class="img-fluid" style="display: block; width: 100%;">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3 style="text-shadow:black 0 0 2px; color: lightgray;">{{obj1.photo_name}}</h3>
+                              </div>
+                          </slide>
+                        </carousel>
+                        <!-- карусель начало  -->
+
                     </div>
                 </div>
               </div>
