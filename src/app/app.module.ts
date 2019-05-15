@@ -24,6 +24,7 @@ import { BoatsTitleComponent } from './boats-title/boats-title.component';
 import { BoatsDescComponent } from './boats-desc/boats-desc.component';
 import { ScrollingDirective } from './scrolling.directive';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 // определение маршрутов
 const appRoutes: Routes =[
   { path: '', component: HomeComponent},
@@ -66,7 +67,8 @@ const appRoutes: Routes =[
     HttpClientModule,
     FormsModule,
     NgxSpinnerModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

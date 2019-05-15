@@ -38,6 +38,7 @@ export class FullAlbumComponent implements OnInit {
 
   async getAlbum(){
     this.ArrofObjects=await this.hp.getGalery(this.id);
+    this.Album=this.ArrofObjects[0].album_name;
   }
 }
 
