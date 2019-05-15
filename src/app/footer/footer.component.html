@@ -1,4 +1,4 @@
-<div *ngIf="doc.body.clientHeight>win.innerHeight">
+<div >
 <footer class="bg-dark py-3">
   <div class="d-flex text-white footer">
       <div class="flex-fill text-left ml-3">© СКИ ОМЭР АН СССР 2008-2019</div>
@@ -6,12 +6,13 @@
   </div>
 </footer>
 </div>
-
-<div *ngIf="win.innerHeight>doc.body.clientHeight">
+<!-- 
+<div *ngIf="win.innerHeight>doc.body.clientHeight"
+  *ngIf="doc.body.clientHeight>win.innerHeight">
   <footer class="bg-dark py-3 fixed-bottom">
     <div class="d-flex text-white footer">
         <div class="flex-fill text-left ml-3">© СКИ ОМЭР АН СССР 2008-2019</div>
         <div class="flex-fill text-right mr-3 text-muted"><a href="https://clck.ru/Fr6tJ">Of course i still love you!</a></div>
     </div>
   </footer>
-</div>
+</div> -->
