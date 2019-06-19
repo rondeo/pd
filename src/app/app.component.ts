@@ -11,20 +11,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService, private http: HttpClient,private hp:HttpService ){}
+  constructor(private spinner: NgxSpinnerService, private http: HttpClient, private hp: HttpService ) {}
   title = 'GGPD';
-  ArrofObjects=[];
-  object={user:"",title:"",description:"",vc:"",enabled:"",date:""};
+  ArrofObjects = [];
+  object = {user: '', title: '', description: '', vc: '', enabled: '', date: ''};
 
-  ngOnInit(){
+  ngOnInit() {
 
-  }
-
-  showSpinner() {
-    this.spinner.show();
-    setTimeout(() => {
-        /** spinner ends after 5 seconds */
-        this.spinner.hide();
-    }, 5000);
   }
 }
